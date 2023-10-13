@@ -11,8 +11,8 @@ window = pygame.display.set_mode((width, height))
 # Background Sound and FeedSound
 pygame.mixer.music.load("backgroundFon.mp3")
 pygame.mixer.music.play(-1, 0.0)       # -1 oyun baslar baslamaz müzik calmaya basla- taki 0.0 yani oyun kapanana kadar
-feedSound = pygame.mixer.Sound("YemFon.mp3")
-levelUp = pygame.mixer.Sound("YemFon.mp3")
+feedSound = pygame.mixer.Sound("feedSound.mp3")
+levelUp = pygame.mixer.Sound("feedSound.mp3")
 
 # Frames per Second ayarlari
 fast = 10    # piksel
@@ -20,16 +20,16 @@ time = pygame.time.Clock()
 FPS = 27
 
 # Karakter ve Yem Ayarlari
-fish = pygame.image.load("balik1-image.png")
+fish = pygame.image.load("fish1-image.png")
 fishCoordinate = fish.get_rect()
 fishCoordinate.topleft = (width / 2, height / 2)
 
-feed = pygame.image.load("yem.png")
+feed = pygame.image.load("feed.png")
 feedCoordinate = feed.get_rect()
 feedCoordinate.topleft = (150, 150)
 
 # Background picture
-background = pygame.image.load("Deniz.jpg")
+background = pygame.image.load("background1.jpg")
 
 # Score degiskeni icin tanimlama
 font = pygame.font.SysFont("consolas", 64)
@@ -65,8 +65,8 @@ while status:
         fishCoordinate.y += fast
 
     if score > 7:
-        fish = pygame.image.load("balik2-image.png")
-        background = pygame.image.load("arkaplan2.jpg")
+        fish = pygame.image.load("fish2-image.png")
+        background = pygame.image.load("background2.jpg")
         if button[pygame.K_LEFT] and fishCoordinate.left > 0:
             fishCoordinate.x -= fast
         elif button[pygame.K_RIGHT] and fishCoordinate.right < width:
